@@ -1,0 +1,932 @@
+{
+	"info": {
+		"_postman_id": "9f3d4bbc-3f93-45f6-9320-3d8754b4c77f",
+		"name": "HIRM人力资源管理系统",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "登录",
+			"item": [
+				{
+					"name": "post-登录",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad37d180-80bc-4ed8-83c6-b03a0e37145d",
+								"exec": [
+									"//获取jison全数据",
+									"var token=pm.response.json().data;",
+									"//保存环境变量set global",
+									"pm.globals.set(\"token\",'Bearer '+ token);",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"13800000002\", \r\n\"password\":\"123456\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/sys/login",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"sys",
+								"login"
+							]
+						},
+						"description": "登录"
+					},
+					"response": []
+				},
+				{
+					"name": "post-登录-用户名错误",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad37d180-80bc-4ed8-83c6-b03a0e37145d",
+								"exec": [
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"13800000666\", \r\n\"password\":\"123456\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						},
+						"description": "登录"
+					},
+					"response": []
+				},
+				{
+					"name": "post-登录-用户名空",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad37d180-80bc-4ed8-83c6-b03a0e37145d",
+								"exec": [
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"\", \r\n\"password\":\"123456\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						},
+						"description": "登录"
+					},
+					"response": []
+				},
+				{
+					"name": "post-登录-密码错误",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad37d180-80bc-4ed8-83c6-b03a0e37145d",
+								"exec": [
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"13800000002\", \r\n\"password\":\"error\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						},
+						"description": "登录"
+					},
+					"response": []
+				},
+				{
+					"name": "post-登录-密码空",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad37d180-80bc-4ed8-83c6-b03a0e37145d",
+								"exec": [
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"13800000002\", \r\n\"password\":\"\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						},
+						"description": "登录"
+					},
+					"response": []
+				},
+				{
+					"name": "post-登录-请求参数为空",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5066af0f-d376-4d18-90ac-e6f30c6d0afd",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						},
+						"description": "登录"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "员工管理",
+			"item": [
+				{
+					"name": "添加",
+					"item": [
+						{
+							"name": "post-员工添加",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											"//获取jison全数据",
+											"var user=pm.response.json().data.id;",
+											"//保存环境变量set global",
+											"pm.globals.set(\"user\", user);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"equals": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"jack999899\",\r\n    \"mobile\": \"18911892278\",\r\n    \"timeOfEntry\": \"2019-07-01\",\r\n    \"formOfEmployment\": 1,\r\n    \"workNumber\": \"1245736\",\r\n    \"departmentName\": \"开发部\",\r\n    \"departmentId\": \"1066240656856453120\",\r\n    \"correctionTime\": \"2019-11-30\"}"
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post-员工必填项校验—姓名",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"\",\r\n    \"mobile\": \"13849586589\",\r\n    \"timeOfEntry\": \"2019-07-01\",\r\n    \"formOfEmployment\": 1,\r\n    \"workNumber\": \"1322131\",\r\n    \"departmentName\": \"开发部\",\r\n    \"departmentId\": \"1066240656856453120\",\r\n    \"correctionTime\": \"2019-11-30\"}"
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post-员工必填项校验—手机",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"jack2879888888\",\r\n    \"mobile\": \"\",\r\n    \"timeOfEntry\": \"2019-07-01\",\r\n    \"formOfEmployment\": 1,\r\n    \"workNumber\": \"1388458\",\r\n    \"departmentName\": \"开发部\",\r\n    \"departmentId\": \"1066240656856453196\",\r\n    \"correctionTime\": \"2019-11-30\"}"
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post-员工必填项校验—工号",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"jack399999999\",\r\n    \"mobile\": \"13847237480\",\r\n    \"timeOfEntry\": \"2019-07-01\",\r\n    \"formOfEmployment\": 1,\r\n    \"workNumber\": \"\",\r\n    \"departmentName\": \"开发部\",\r\n    \"departmentId\": \"1066240656856453205\",\r\n    \"correctionTime\": \"2019-11-30\"}"
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post-员工不传递参数",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "修改",
+					"item": [
+						{
+							"name": "post-员工修改-用户名",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\":\"lol123456\"}"
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user/{{user}}",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user",
+										"{{user}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post-员工修改 -id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"id\":\"123\"}"
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user/{{user}}",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user",
+										"{{user}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "删除",
+					"item": [
+						{
+							"name": "post-员工删除",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\":\"lol123456\"}"
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user/{{user}}",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user",
+										"{{user}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post-员工删除 -不传入ID信息",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\":\"lol123456\"}"
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user/{{users}}",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user",
+										"{{users}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "查找",
+					"item": [
+						{
+							"name": "post-员工查找",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user/{{user}}",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user",
+										"{{user}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post-查找不存在的用户信息",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef716d89-5aee-425a-8cb8-aa0018cc923c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"equals": true,
+										"key": "Authorization",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://182.92.81.159/api/sys/user/1175223466613600257",
+									"protocol": "http",
+									"host": [
+										"182",
+										"92",
+										"81",
+										"159"
+									],
+									"path": [
+										"api",
+										"sys",
+										"user",
+										"1175223466613600257"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
