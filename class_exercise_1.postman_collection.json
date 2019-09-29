@@ -190,7 +190,7 @@
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});pm.test(\"用户名为空失败\", function () {",
+									"});pm.test(\"用户名为空\", function () {",
 									"    pm.expect(pm.response.text()).to.include(\"用户名或密码错误\");",
 									"});"
 								],
@@ -314,7 +314,7 @@
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});pm.test(\"密码为空失败\", function () {",
+									"});pm.test(\"密码为空\", function () {",
 									"    pm.expect(pm.response.text()).to.include(\"用户名或密码错误\");",
 									"});"
 								],
@@ -334,7 +334,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"mobile\":\"\", \r\n\"password\":\"123456\"}",
+							"raw": "{\"mobile\":\"13800000002\", \r\n\"password\":\"\"}",
 							"options": {
 								"raw": {
 									"language": "json"
